@@ -1,0 +1,58 @@
+<odoo>
+
+    <record id="wb_pushnotifications_tree_view" model= "ir.ui.view">
+        <field name="name">wb.pushnotifications.tree.view</field>
+        <field name="model">wb.pushnotifications</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="sender"/>
+                <field name="receiver"/>
+                <field name="content"/>
+            </tree>
+        
+        </field>
+        
+    </record>
+
+    <record id="wb_pushnotifications_form_view" model= "ir.ui.view">
+        <field name="name">wb.pushnotifications.form.view</field>
+        <field name="model">wb.pushnotifications</field>
+        <field name="arch" type="xml">
+            <form string="pushnotifications">
+            <group>    
+                <group>
+
+                    <field name="name"/>
+                    <field name="sender"/>
+                    <field name="receiver"/>
+                    <field name="content"/>
+                </group>
+
+            </group>
+            </form>
+        
+        </field>
+        
+    </record>
+
+    <record id="wb_pushnotifications_action" model= "ir.action.act_window">
+        <field name="name">wb.pushnotifications.form.view</field>
+        <field name="res_model">wb.pushnotifications</field>
+        <field name="view_mode">tree, form</field>
+
+    </record>
+
+    <menuitem id ="wb_pushnotifications_root_menu" 
+                name = "PushNotifications"/>
+
+    <menuitem id ="wb_pushnotifications_sub_root_menu" 
+                name = "Notifications"
+                parent="wb_pushnotifications_root_menu"/>
+
+    <menuitem id ="wb_pushnotifications_menu" 
+                action="wb_pushnotifications_action"
+                name = "PushNotifications"
+                parent="wb_pushnotifications_sub_root_menu"/>
+
+</odoo>

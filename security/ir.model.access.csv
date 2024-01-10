@@ -1,0 +1,4 @@
+# custom_addons/pushnotifications/security/ir.model.access.csv
+
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_wb_pushnotifications,wb.pushnotifications, model_wb_pushnotifications,base.group_user,1,1,1,1
